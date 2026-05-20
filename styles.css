@@ -1,0 +1,644 @@
+/* 1. Global Reset & Body Background */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0B0F19; /* Deep Dark Navy from portfolio */
+    color: #FFFFFF;
+    min-height: 100vh;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 1.3rem;
+}
+.hero-section-1{
+    max-width: 500px;
+    padding: 20px;
+}
+
+.hero-section-1 h1{
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.hero-section-1 h1 span{
+    color: rgb(82, 233, 102)/* Vibrant Lime Green from portfolio */
+}
+
+.hero-section-1 p{
+    font-size: 1.2rem;
+    color: #9CA3AF; /* Muted text color for description */
+}
+
+.hero-buttons{
+    margin-top: 24px;
+}
+
+.hero-buttons .primary-btn{
+    background-color: #00E63D; /* Vibrant Lime Green from portfolio */
+    color: #0B0F19; /* Deep dark navy text inside the bright green button */
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-buttons .secondary-btn{
+    background-color: transparent;
+    color: #00E63D; /* Muted text color for secondary button */
+    border: 1px solid #00ff40;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+
+.hero-section-2{
+    background-color: #00D200;
+    overflow: hidden;
+    box-shadow: 0px 0px 100px rgba(0, 230, 61, 0.3);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+    border: 2px solid #ebf3ed;
+}
+
+@media (max-width: 768px){
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-section-1 h1{
+        font-size: 2rem;
+    }
+}
+/* Container Spacing */
+.skills-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #0B0F19; /* Deep dark navy base */
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.section-title .highlight {
+    color: #00E63D;
+}
+
+
+/* --- THE HEXAGON GRID CONFIGURATION --- */
+.hexagon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    max-width: 760px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+/* =========================
+   HEXAGON CARD BASE
+========================= */
+.hexagon-card {
+    position: relative;
+    width: 160px;
+    height: 180px;
+
+    /* fallback color */
+    background-color: #1F2937;
+
+    clip-path: polygon(
+        50% 0%,
+        100% 25%,
+        100% 75%,
+        50% 100%,
+        0% 75%,
+        0% 25%
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease,
+        box-shadow 0.35s ease;
+
+    cursor: pointer;
+}
+
+/* =========================
+   INNER HEXAGON
+========================= */
+.hexagon-inner {
+    position: absolute;
+    width: 148px;
+    height: 168px;
+
+    /* dark premium inner layer */
+    background: #111827;
+
+    clip-path: polygon(
+        50% 0%,
+        100% 25%,
+        100% 75%,
+        50% 100%,
+        0% 75%,
+        0% 25%
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background 0.35s ease;
+}
+
+/* =========================
+   TEXT
+========================= */
+.hexagon-inner span {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+/* =====================================
+   PROFESSIONAL TECH BRAND COLORS
+===================================== */
+
+/* HTML5 */
+.hexagon-card.html5 {
+    background: #E34F26;
+}
+.hexagon-card.html5 span {
+    color: #E34F26;
+}
+
+/* CSS3 */
+.hexagon-card.css3 {
+    background: #1572B6;
+}
+.hexagon-card.css3 span {
+    color: #1572B6;
+}
+
+/* JavaScript */
+.hexagon-card.js {
+    background: #F7DF1E;
+}
+.hexagon-card.js span {
+    color: #F7DF1E;
+}
+
+/* ReactJS */
+.hexagon-card.reactjs {
+    background: #61DAFB;
+}
+.hexagon-card.reactjs span {
+    color: #61DAFB;
+}
+
+/* NextJS */
+.hexagon-card.nextjs {
+    background: #FFFFFF;
+}
+.hexagon-card.nextjs span {
+    color: #FFFFFF;
+}
+
+/* PHP */
+.hexagon-card.php {
+    background: #777BB4;
+}
+.hexagon-card.php span {
+    color: #777BB4;
+}
+
+/* jQuery */
+.hexagon-card.jquery {
+    background: #0769AD;
+}
+.hexagon-card.jquery span {
+    color: #0769AD;
+}
+
+/* WordPress */
+.hexagon-card.wp {
+    background: #21759B;
+}
+.hexagon-card.wp span {
+    color: #21759B;
+}
+
+/* =========================
+   HOVER EFFECTS
+========================= */
+.hexagon-card:hover {
+    transform: translateY(-10px) scale(1.05);
+
+    filter: drop-shadow(
+        0 14px 28px rgba(0, 0, 0, 0.35)
+    );
+}
+
+.hexagon-card:hover .hexagon-inner {
+    background: #1E293B;
+}
+
+.hexagon-card:hover span {
+    transform: scale(1.08);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .hexagon-grid {
+        gap: 14px;
+    }
+
+    .hexagon-card {
+        width: 130px;
+        height: 150px;
+    }
+
+    .hexagon-inner {
+        width: 120px;
+        height: 138px;
+    }
+
+    .hexagon-inner span {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* 2. Footer Dock Container (Positioning it at the bottom) */
+.footer-dock-container {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 100%;
+    max-width: 650px; /* Limits width to keep the capsule look */
+    padding: 0 16px;
+}
+
+/* 3. The Floating Nav Bar */
+.floating-nav {
+    background-color: #161F30; /* Dark blue-toned navy card background */
+    border: 1px solid #1B3B2B;   /* Subtle dark green border */
+    border-radius: 100px;        /* Perfect pill shape */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Soft dark shadow */
+}
+
+/* 4. Left Side: Logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0B0F19; /* Match body color for contrast */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+/* 5. Center: Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.nav-item {
+    color: #9CA3AF; /* Muted text color for inactive links */
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 50px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect for links */
+.nav-item:hover {
+    color: #FFFFFF;
+}
+
+/* Active Page Link Style */
+.nav-item.active {
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.05); /* Soft background highlight */
+}
+
+/* 6. Right Side: Contact Status Pill */
+.nav-status-pill {
+    background-color: #00E63D; /* Vibrant Lime Green from portfolio */
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.nav-status-pill:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(0, 230, 61, 0.4); /* Neon glow on hover */
+}
+
+.status-text {
+    color: #0B0F19; /* Deep dark navy text inside the bright green button */
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* =========================
+   GLOBAL SECTION
+========================= */
+
+.experience-section{
+    min-height:100vh;
+
+    padding:80px 20px;
+
+    font-family:sans-serif;
+
+    color:white;
+}
+
+/* =========================
+   TIMELINE WRAPPER
+========================= */
+
+.timeline-wrapper{
+    position:relative;
+
+    max-width:1200px;
+
+    margin:0 auto;
+}
+
+/* =========================
+   CENTER LINE
+========================= */
+
+.timeline-line{
+    position:absolute;
+
+    left:50%;
+    top:0;
+
+    transform:translateX(-50%);
+
+    width:2px;
+    height:100%;
+
+    background:#8B0000;
+}
+
+/* =========================
+   TIMELINE ITEM
+========================= */
+
+.timeline-item{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:60px;
+
+    position:relative;
+}
+
+/* =========================
+   DATE SECTION
+========================= */
+
+.timeline-date{
+    width:45%;
+
+    display:flex;
+
+    justify-content:flex-end;
+}
+
+.timeline-date span{
+
+    padding:14px 24px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:#bdbdbd;
+
+    font-size:15px;
+
+    backdrop-filter:blur(10px);
+}
+
+/* =========================
+   EXPERIENCE CARD
+========================= */
+
+.experience-card{
+
+    width:45%;
+
+    position:relative;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:rgba(20,20,20,0.65);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(12px);
+
+    transition:0.3s ease;
+}
+
+/* =========================
+   CARD HOVER
+========================= */
+
+.experience-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 15px 40px rgba(255,0,0,0.15);
+}
+
+/* =========================
+   TOP ICON
+========================= */
+
+.card-icon{
+
+    position:absolute;
+
+    top:-25px;
+    left:-25px;
+
+    width:55px;
+    height:55px;
+
+    border-radius:16px;
+
+    background:#0f0f0f;
+
+    border:2px solid #ff2a2a;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:
+    0 0 18px rgba(255,0,0,0.5);
+}
+
+.card-icon i{
+
+    color:#ff3b3b;
+
+    font-size:20px;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+.experience-card h2{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+    color:white;
+}
+
+.experience-card h4{
+
+    color:#ff4b4b;
+
+    margin-bottom:35px;
+
+    font-weight:500;
+}
+
+/* =========================
+   LIST
+========================= */
+
+.experience-card ul{
+
+    list-style:none;
+}
+
+.experience-card ul li{
+
+    position:relative;
+
+    padding-left:28px;
+
+    margin-bottom:24px;
+
+    line-height:1.8;
+
+    color:#b6b6b6;
+}
+
+/* custom bullet */
+
+.experience-card ul li::before{
+
+    content:"›";
+
+    position:absolute;
+
+    left:0;
+
+    color:#ff3b3b;
+
+    font-size:24px;
+
+    top:-2px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .timeline-item{
+
+        flex-direction:column;
+
+        gap:30px;
+    }
+
+    .timeline-line{
+
+        left:20px;
+    }
+
+    .timeline-date{
+
+        width:100%;
+
+        justify-content:flex-start;
+
+        padding-left:50px;
+    }
+
+    .experience-card{
+
+        width:100%;
+
+        margin-left:50px;
+    }
+}
