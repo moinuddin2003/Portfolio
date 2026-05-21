@@ -1,4 +1,6 @@
-/* 1. Global Reset & Body Background */
+/* ================================
+   1. GLOBAL RESET & BASE
+================================ */
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +9,19 @@
 }
 
 body {
-    background-color: #0B0F19; /* Deep Dark Navy from portfolio */
+    background-color: #0B0F19;
     color: #FFFFFF;
     min-height: 100vh;
+
+    background-image:
+        radial-gradient(ellipse at top left, rgba(0, 230, 61, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(0, 230, 61, 0.1) 0%, transparent 50%);
 }
 
+
+/* ================================
+   2. HERO SECTION
+================================ */
 .hero-section {
     display: flex;
     justify-content: space-around;
@@ -19,32 +29,35 @@ body {
     gap: 20px;
     padding: 1.3rem;
 }
-.hero-section-1{
+
+.hero-section-1 {
     max-width: 500px;
     padding: 20px;
 }
 
-.hero-section-1 h1{
+.hero-section-1 h1 {
     font-size: 2.5rem;
     margin-bottom: 16px;
 }
 
-.hero-section-1 h1 span{
-    color: rgb(82, 233, 102)/* Vibrant Lime Green from portfolio */
+.hero-section-1 h1 span {
+    color: rgb(82, 233, 102);
 }
 
-.hero-section-1 p{
+.hero-section-1 p {
     font-size: 1.2rem;
-    color: #9CA3AF; /* Muted text color for description */
+    color: #9CA3AF;
 }
 
-.hero-buttons{
+.hero-buttons {
     margin-top: 24px;
+    display: flex;
+    gap: 12px;
 }
 
-.hero-buttons .primary-btn{
-    background-color: #00E63D; /* Vibrant Lime Green from portfolio */
-    color: #0B0F19; /* Deep dark navy text inside the bright green button */
+.hero-buttons .primary-btn {
+    background-color: #00E63D;
+    color: #0B0F19;
     border: none;
     padding: 12px 24px;
     border-radius: 50px;
@@ -54,10 +67,15 @@ body {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hero-buttons .secondary-btn{
+.hero-buttons .primary-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 16px rgba(0, 230, 61, 0.4);
+}
+
+.hero-buttons .secondary-btn {
     background-color: transparent;
-    color: #00E63D; /* Muted text color for secondary button */
-    border: 1px solid #00ff40;
+    color: #00E63D;
+    border: 1px solid #00E63D;
     padding: 10px 22px;
     border-radius: 50px;
     font-size: 0.95rem;
@@ -66,25 +84,36 @@ body {
     transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-
-.hero-section-2{
+.hero-section-2 {
     background-color: #00D200;
     overflow: hidden;
     box-shadow: 0px 0px 100px rgba(0, 230, 61, 0.3);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     border: 2px solid #ebf3ed;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .hero-section {
         flex-direction: column-reverse;
         text-align: center;
     }
-    .hero-section-1 h1{
+
+    .hero-section-1 h1 {
         font-size: 2rem;
     }
+
+    .hero-buttons {
+        justify-content: center;
+    }
 }
-/* Container Spacing */
+
+
+/* ================================
+   3. SKILLS SECTION
+================================ */
+/* Marquee wrapper — hides overflow and adds fade edges */
+
+
 .skills-section {
     padding: 60px 20px;
     text-align: center;
@@ -97,13 +126,57 @@ body {
     margin-bottom: 40px;
 }
 
+
 .section-title .highlight {
     color: #00E63D;
 }
 
 
-/* --- THE HEXAGON GRID CONFIGURATION --- */
-.hexagon-grid {
+.marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 20px 0 40px;
+
+    /* Fade out left and right edges */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
+    );
+}
+
+/* The scrolling track */
+.marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: max-content;
+
+    animation: marquee-scroll 18s linear infinite;
+}
+
+/* Pause on hover */
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* The scroll animation */
+@keyframes marquee-scroll {
+     0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+ .hexagon-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -113,156 +186,69 @@ body {
     padding-bottom: 40px;
 }
 
-/* =========================
-   HEXAGON CARD BASE
-========================= */
+/* Hexagon Card */
 .hexagon-card {
     position: relative;
     width: 160px;
     height: 180px;
-
-    /* fallback color */
     background-color: #1F2937;
-
-    clip-path: polygon(
-        50% 0%,
-        100% 25%,
-        100% 75%,
-        50% 100%,
-        0% 75%,
-        0% 25%
-    );
-
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
     align-items: center;
     justify-content: center;
-
-    transition:
-        transform 0.35s ease,
-        filter 0.35s ease,
-        box-shadow 0.35s ease;
-
+    transition: transform 0.35s ease, filter 0.35s ease;
     cursor: pointer;
 }
 
-/* =========================
-   INNER HEXAGON
-========================= */
 .hexagon-inner {
     position: absolute;
     width: 148px;
     height: 168px;
-
-    /* dark premium inner layer */
     background: #111827;
-
-    clip-path: polygon(
-        50% 0%,
-        100% 25%,
-        100% 75%,
-        50% 100%,
-        0% 75%,
-        0% 25%
-    );
-
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
     align-items: center;
     justify-content: center;
-
     transition: background 0.35s ease;
 }
 
-/* =========================
-   TEXT
-========================= */
 .hexagon-inner span {
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-
-    transition:
-        transform 0.3s ease,
-        color 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* =====================================
-   PROFESSIONAL TECH BRAND COLORS
-===================================== */
+/* Tech Brand Colors */
+.hexagon-card.html5  { background: #E34F26; }
+.hexagon-card.html5 span  { color: #E34F26; }
 
-/* HTML5 */
-.hexagon-card.html5 {
-    background: #E34F26;
-}
-.hexagon-card.html5 span {
-    color: #E34F26;
-}
+.hexagon-card.css3   { background: #1572B6; }
+.hexagon-card.css3 span   { color: #1572B6; }
 
-/* CSS3 */
-.hexagon-card.css3 {
-    background: #1572B6;
-}
-.hexagon-card.css3 span {
-    color: #1572B6;
-}
+.hexagon-card.js     { background: #F7DF1E; }
+.hexagon-card.js span     { color: #F7DF1E; }
 
-/* JavaScript */
-.hexagon-card.js {
-    background: #F7DF1E;
-}
-.hexagon-card.js span {
-    color: #F7DF1E;
-}
+.hexagon-card.reactjs { background: #61DAFB; }
+.hexagon-card.reactjs span { color: #61DAFB; }
 
-/* ReactJS */
-.hexagon-card.reactjs {
-    background: #61DAFB;
-}
-.hexagon-card.reactjs span {
-    color: #61DAFB;
-}
+.hexagon-card.nextjs  { background: #FFFFFF; }
+.hexagon-card.nextjs span  { color: #FFFFFF; }
 
-/* NextJS */
-.hexagon-card.nextjs {
-    background: #FFFFFF;
-}
-.hexagon-card.nextjs span {
-    color: #FFFFFF;
-}
+.hexagon-card.php    { background: #777BB4; }
+.hexagon-card.php span    { color: #777BB4; }
 
-/* PHP */
-.hexagon-card.php {
-    background: #777BB4;
-}
-.hexagon-card.php span {
-    color: #777BB4;
-}
+.hexagon-card.jquery { background: #0769AD; }
+.hexagon-card.jquery span { color: #0769AD; }
 
-/* jQuery */
-.hexagon-card.jquery {
-    background: #0769AD;
-}
-.hexagon-card.jquery span {
-    color: #0769AD;
-}
+.hexagon-card.wp     { background: #21759B; }
+.hexagon-card.wp span     { color: #21759B; }
 
-/* WordPress */
-.hexagon-card.wp {
-    background: #21759B;
-}
-.hexagon-card.wp span {
-    color: #21759B;
-}
-
-/* =========================
-   HOVER EFFECTS
-========================= */
+/* Hexagon Hover */
 .hexagon-card:hover {
     transform: translateY(-10px) scale(1.05);
-
-    filter: drop-shadow(
-        0 14px 28px rgba(0, 0, 0, 0.35)
-    );
+    filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.35));
 }
 
 .hexagon-card:hover .hexagon-inner {
@@ -273,11 +259,7 @@ body {
     transform: scale(1.08);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width: 768px) {
-
     .hexagon-grid {
         gap: 14px;
     }
@@ -295,10 +277,396 @@ body {
     .hexagon-inner span {
         font-size: 0.9rem;
     }
+} 
+
+
+/* ================================
+   4. EXPERIENCE SECTION
+================================ */
+.experience-section {
+    min-height: 100vh;
+    padding: 60px 20px 100px;
+
+    background-image: radial-gradient(
+        ellipse at center top,
+        rgba(0, 230, 61, 0.08) 0%,
+        transparent 60%
+    );
+}
+
+.experience-section .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Timeline Wrapper */
+.timeline-wrapper {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Center Vertical Line */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #00E63D;
+}
+
+/* Timeline Item */
+.timeline-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    padding: 40px 0;
+}
+
+/* Green dot on the line */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #00E63D;
+    box-shadow: 0 0 10px rgba(0, 230, 61, 0.6);
+    z-index: 1;
+}
+
+/* Date Pill */
+.timeline-date {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.timeline-date span {
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #bdbdbd;
+    font-size: 15px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.timeline-date span i {
+    color: #9CA3AF;
+}
+
+/* Experience Card */
+.experience-card {
+    width: 40%;
+    max-width: 520px;
+    position: relative;
+    padding: 40px 36px 36px;
+    border-radius: 24px;
+    background: rgba(20, 20, 20, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    overflow: visible;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 230, 61, 0.1);
+}
+
+/* Card Icon */
+.card-icon {
+    position: absolute;
+    top: -20px;
+    left: 50%;                          /* center it on the card's top edge */
+    transform: translateX(-50%); 
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #0f0f0f;
+    border: 2px solid #00E63D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 16px rgba(0, 230, 61, 0.35);
+}
+
+.card-icon i {
+    color: #00E63D;
+    font-size: 18px;
 }
 
 
-/* 2. Footer Dock Container (Positioning it at the bottom) */
+
+/* Card Content */
+.experience-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+.experience-card h4 {
+    color: #00E63D;
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.experience-card ul {
+    list-style: none;
+}
+
+.experience-card ul li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 16px;
+    line-height: 1.8;
+    color: #b6b6b6;
+    font-size: 0.95rem;
+}
+
+.experience-card ul li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: #00E63D;
+    font-size: 22px;
+    top: -2px;
+}
+
+.timeline-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.timeline-item.reverse .timeline-date {
+    justify-content: flex-start;   /* date goes to the right side */
+}
+
+/* Flip order for alternating layout */
+
+
+/* Responsive */
+@media (max-width: 900px) {
+    .timeline-line {
+        left: 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 30px 0 30px 50px;
+    }
+
+    .timeline-item::before {
+        left: 20px;
+        top: 36px;
+        transform: translateX(-50%);
+    }
+
+    .timeline-date {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .experience-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* ================================
+   4. ComMUNICATION SECTION
+================================ */
+
+.communication .section-title,.project{
+    text-align: center;
+}
+
+.communication{
+    background: 
+        radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, rgba(20, 20, 20, 0.65) 100%);
+        padding: 60px 20px 100px;
+
+    }
+.communication-section{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 40px;
+    
+}
+
+.communication-section-2{
+    flex:1;
+    padding: 20px;
+}
+
+.communication-section-1{
+    border-radius: 24px;
+    flex: 1;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+}
+
+.communication-section-1:hover{
+    transform: translateY(-8px);
+    box-shadow: rgba(0, 230, 61, 0.1) 0px 15px 40px;
+}
+
+form label{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    gap: 8px;
+    /* color: #9CA3AF;
+    font-size: 0.95rem; */
+}
+
+form label span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #9CA3AF;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+form input, form textarea{
+    width: 100%;
+    background: rgba(255,255,255,0.05); 
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: white
+}
+
+form textarea{
+    resize: vertical;
+    min-height: 120px;
+}
+
+form input:focus, form textarea:focus{
+    outline: none;
+    border-color: #00E63D;
+}
+
+
+button[type="submit"] {
+    width:100%;
+    padding:14px;
+    background: transparent;
+    border: 1px solid #00E63D;
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background: #00E63D;
+    color: #0B0F19;
+    border-color: transparent;
+    box-shadow: 0 0 16px rgba(0, 230, 61, 0.4);
+}
+
+.contact-header{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.contact-header i{
+    color: #00E63D
+}
+
+.contact-item{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding:16px 20px;
+    margin-bottom: 12px;
+}
+
+/* Contact icon circle */
+.contact-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;        /* prevents shrinking */
+    border-radius: 50%;
+    background: rgba(0, 230, 61, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon i {
+    color: #00E63D;
+    font-size: 16px;
+}
+
+/* Contact label (EMAIL, PHONE, LOCATION) */
+.contact-label {
+    font-size: 0.7rem;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+/* Contact value */
+.contact-value {
+    font-size: 0.95rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Form heading */
+.communication-section-1 h2 {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+
+.communication-section-1 p {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .communication-section {
+        flex-direction: column;
+    }
+
+    .communication-section-1,
+    .communication-section-2 {
+        width: 100%;
+    }
+}
+/* ================================
+   5. FOOTER / FLOATING NAV
+================================ */
 .footer-dock-container {
     position: fixed;
     bottom: 24px;
@@ -306,44 +674,41 @@ body {
     transform: translateX(-50%);
     z-index: 1000;
     width: 100%;
-    max-width: 650px; /* Limits width to keep the capsule look */
+    max-width: 650px;
     padding: 0 16px;
 }
 
-/* 3. The Floating Nav Bar */
 .floating-nav {
-    background-color: #161F30; /* Dark blue-toned navy card background */
-    border: 1px solid #1B3B2B;   /* Subtle dark green border */
-    border-radius: 100px;        /* Perfect pill shape */
+    background-color: #161F30;
+    border: 1px solid #1B3B2B;
+    border-radius: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 8px 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Soft dark shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* 4. Left Side: Logo */
 .nav-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #0B0F19; /* Match body color for contrast */
+    background-color: #0B0F19;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     font-size: 1.2rem;
 }
 
-/* 5. Center: Navigation Links */
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     position: relative;
 }
 
 .nav-item {
-    color: #9CA3AF; /* Muted text color for inactive links */
+    color: #9CA3AF;
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
@@ -352,293 +717,33 @@ body {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Hover effect for links */
 .nav-item:hover {
     color: #FFFFFF;
 }
 
-/* Active Page Link Style */
 .nav-item.active {
     color: #FFFFFF;
-    background-color: rgba(255, 255, 255, 0.05); /* Soft background highlight */
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
-/* 6. Right Side: Contact Status Pill */
 .nav-status-pill {
-    background-color: #00E63D; /* Vibrant Lime Green from portfolio */
+    background-color: #00E63D;
     padding: 10px 20px;
     border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .nav-status-pill:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 15px rgba(0, 230, 61, 0.4); /* Neon glow on hover */
+    box-shadow: 0 0 15px rgba(0, 230, 61, 0.4);
 }
 
 .status-text {
-    color: #0B0F19; /* Deep dark navy text inside the bright green button */
+    color: #0B0F19;
     font-size: 0.9rem;
     font-weight: 600;
-}
-
-/* =========================
-   GLOBAL SECTION
-========================= */
-
-.experience-section{
-    min-height:100vh;
-
-    padding:80px 20px;
-
-    font-family:sans-serif;
-
-    color:white;
-}
-
-/* =========================
-   TIMELINE WRAPPER
-========================= */
-
-.timeline-wrapper{
-    position:relative;
-
-    max-width:1200px;
-
-    margin:0 auto;
-}
-
-/* =========================
-   CENTER LINE
-========================= */
-
-.timeline-line{
-    position:absolute;
-
-    left:50%;
-    top:0;
-
-    transform:translateX(-50%);
-
-    width:2px;
-    height:100%;
-
-    background:#8B0000;
-}
-
-/* =========================
-   TIMELINE ITEM
-========================= */
-
-.timeline-item{
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:60px;
-
-    position:relative;
-}
-
-/* =========================
-   DATE SECTION
-========================= */
-
-.timeline-date{
-    width:45%;
-
-    display:flex;
-
-    justify-content:flex-end;
-}
-
-.timeline-date span{
-
-    padding:14px 24px;
-
-    border-radius:999px;
-
-    background:rgba(255,255,255,0.05);
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    color:#bdbdbd;
-
-    font-size:15px;
-
-    backdrop-filter:blur(10px);
-}
-
-/* =========================
-   EXPERIENCE CARD
-========================= */
-
-.experience-card{
-
-    width:45%;
-
-    position:relative;
-
-    padding:40px;
-
-    border-radius:30px;
-
-    background:rgba(20,20,20,0.65);
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    backdrop-filter:blur(12px);
-
-    transition:0.3s ease;
-}
-
-/* =========================
-   CARD HOVER
-========================= */
-
-.experience-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:
-    0 15px 40px rgba(255,0,0,0.15);
-}
-
-/* =========================
-   TOP ICON
-========================= */
-
-.card-icon{
-
-    position:absolute;
-
-    top:-25px;
-    left:-25px;
-
-    width:55px;
-    height:55px;
-
-    border-radius:16px;
-
-    background:#0f0f0f;
-
-    border:2px solid #ff2a2a;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    box-shadow:
-    0 0 18px rgba(255,0,0,0.5);
-}
-
-.card-icon i{
-
-    color:#ff3b3b;
-
-    font-size:20px;
-}
-
-/* =========================
-   HEADINGS
-========================= */
-
-.experience-card h2{
-
-    font-size:40px;
-
-    margin-bottom:10px;
-
-    color:white;
-}
-
-.experience-card h4{
-
-    color:#ff4b4b;
-
-    margin-bottom:35px;
-
-    font-weight:500;
-}
-
-/* =========================
-   LIST
-========================= */
-
-.experience-card ul{
-
-    list-style:none;
-}
-
-.experience-card ul li{
-
-    position:relative;
-
-    padding-left:28px;
-
-    margin-bottom:24px;
-
-    line-height:1.8;
-
-    color:#b6b6b6;
-}
-
-/* custom bullet */
-
-.experience-card ul li::before{
-
-    content:"›";
-
-    position:absolute;
-
-    left:0;
-
-    color:#ff3b3b;
-
-    font-size:24px;
-
-    top:-2px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:900px){
-
-    .timeline-item{
-
-        flex-direction:column;
-
-        gap:30px;
-    }
-
-    .timeline-line{
-
-        left:20px;
-    }
-
-    .timeline-date{
-
-        width:100%;
-
-        justify-content:flex-start;
-
-        padding-left:50px;
-    }
-
-    .experience-card{
-
-        width:100%;
-
-        margin-left:50px;
-    }
 }
