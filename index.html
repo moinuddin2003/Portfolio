@@ -3,303 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Footer Dock</title>
+    <title>Muhammad Moinuddin — Frontend Developer</title>
     <link rel="stylesheet" href="styles.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
 
+    <!-- ===================== HERO ===================== -->
     <main class="hero-section">
-    <section class="hero-section-1">
-        <h1>Hi, I am <span>Muhammad Moinuddin</span> 👋</h1>
-        <p>Software Engineer with 1 Year of Professional Experience </p>
-        <div class="hero-buttons">
-            <button class="primary-btn">Hire Me</button>
-            <button class="secondary-btn">Download CV</button>
-        </div>
-    </section>
-    <section class="hero-section-2">
-        <img src="./assets/hero.png" width="300px" height="auto" alt="" srcset="">
-    </section>
+        <section class="hero-section-1">
+
+            <div class="avail-badge">
+                <span class="dot-pulse"></span> Available for Work
+            </div>
+
+            <h1>Hi, I am <span>Muhammad Moinuddin</span> 👋</h1>
+            <p class="hero-role">Frontend Developer · React · Next.js</p>
+            <p class="hero-subtitle">Building clean, fast, and accessible interfaces with 1 year of professional experience. Based in Karachi, Pakistan.</p>
+
+            <div class="hero-buttons">
+                <button class="primary-btn">Hire Me</button>
+                <button class="secondary-btn">Download CV</button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num">1+</span>
+                    <span class="stat-label">Years Exp</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">10+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-num">25+</span>
+                    <span class="stat-label">Bugs Fixed</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="hero-section-2">
+            <div class="hero-img-wrapper">
+                <img src="./assets/hero.png" width="260" height="auto" alt="Muhammad Moinuddin">
+
+                <!-- Floating card: top right -->
+                <div class="float-card float-card--tr">
+                    <div class="float-icon">⚛️</div>
+                    <div>
+                        <div class="float-text-main">React Dev</div>
+                        <div class="float-text-sub">Next.js · Tailwind</div>
+                    </div>
+                </div>
+
+                <!-- Floating card: bottom left -->
+                <div class="float-card float-card--bl">
+                    <div class="float-card-label">Tech Stack</div>
+                    <div class="stack-chips">
+                        <span class="chip chip--active">React</span>
+                        <span class="chip chip--active">Next.js</span>
+                        <span class="chip">PHP</span>
+                        <span class="chip">WP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- ===================== SKILLS ===================== -->
     <section class="skills-section" id="skills">
-    <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
+        <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
 
-    <div class="marquee-wrapper">
-        <div class="marquee-track">
-            <!-- First set -->
-            <div class="hexagon-card html5"><div class="hexagon-inner"><span>HTML5</span></div></div>
-            <div class="hexagon-card css3"><div class="hexagon-inner"><span>CSS3</span></div></div>
-            <div class="hexagon-card js"><div class="hexagon-inner"><span>Javascript</span></div></div>
-            <div class="hexagon-card reactjs"><div class="hexagon-inner"><span>ReactJS</span></div></div>
-            <div class="hexagon-card nextjs"><div class="hexagon-inner"><span>NextJS</span></div></div>
-            <div class="hexagon-card php"><div class="hexagon-inner"><span>PHP</span></div></div>
-            <div class="hexagon-card jquery"><div class="hexagon-inner"><span>jQuery</span></div></div>
-            <div class="hexagon-card wp"><div class="hexagon-inner"><span>WordPress</span></div></div>
-
-            <!-- Duplicate set for seamless loop -->
-            <div class="hexagon-card html5"><div class="hexagon-inner"><span>HTML5</span></div></div>
-            <div class="hexagon-card css3"><div class="hexagon-inner"><span>CSS3</span></div></div>
-            <div class="hexagon-card js"><div class="hexagon-inner"><span>Javascript</span></div></div>
-            <div class="hexagon-card reactjs"><div class="hexagon-inner"><span>ReactJS</span></div></div>
-            <div class="hexagon-card nextjs"><div class="hexagon-inner"><span>NextJS</span></div></div>
-            <div class="hexagon-card php"><div class="hexagon-inner"><span>PHP</span></div></div>
-            <div class="hexagon-card jquery"><div class="hexagon-inner"><span>jQuery</span></div></div>
-            <div class="hexagon-card wp"><div class="hexagon-inner"><span>WordPress</span></div></div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <span class="skill-icon">🌐</span>
+                <span class="skill-name">HTML5</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+                <span class="skill-pct">95%</span>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">🎨</span>
+                <span class="skill-name">CSS3</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+                <span class="skill-pct">90%</span>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">⚡</span>
+                <span class="skill-name">JavaScript</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                <span class="skill-pct">80%</span>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">⚛️</span>
+                <span class="skill-name">ReactJS</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+                <span class="skill-pct">85%</span>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">▲</span>
+                <span class="skill-name">Next.js</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+                <span class="skill-pct">75%</span>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">🐘</span>
+                <span class="skill-name">PHP</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+                <span class="skill-pct">65%</span>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">💲</span>
+                <span class="skill-name">jQuery</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+                <span class="skill-pct">70%</span>
+            </div>
+            <div class="skill-card">
+                <span class="skill-icon">🔷</span>
+                <span class="skill-name">WordPress</span>
+                <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+                <span class="skill-pct">80%</span>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- ===================== EXPERIENCE ===================== -->
     <section class="experience-section" id="experience">
         <h2 class="section-title">Work <span class="highlight">Experience</span></h2>
 
         <div class="timeline-wrapper">
-             <!-- Vertical Line -->
-        <div class="timeline-line"></div>
-
-        <!-- Timeline Item -->
+            <div class="timeline-line"></div>
             <div class="timeline-item">
                 <div class="timeline-date">
-                    <span>
-                        <i class="fa-regular fa-calendar"></i>  May 2026 - Present,
-                    </span>
+                    <span><i class="fa-regular fa-calendar"></i> May 2026 – Present</span>
                 </div>
-
                 <div class="experience-card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-briefcase"></i>
-                    </div>
-
+                    <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
                     <h2>Trainee Software Engineer</h2>
-
                     <h4>Xolva</h4>
-
                     <ul>
-
-                        <li>
-                            Learned semantic HTML5 markup to build clean, organized, and structural web pages.
-                        </li>
-
-                        <li>
-Studied WCAG accessibility standards to understand how to design websites for screen readers and diverse users.                        </li>
-
-                        <li>
-                            Partnered with backend developers to identify and resolve UI inconsistencies, enhancing platform stability and reducing reported interface issues
-by 20%.
-visually appealing design.
-                        </li>
-
-                        <!-- <li>
-                            Created automation workflows in n8n.
-                        </li>
-
-                        <li>
-                            Collaborated with AI and product teams.
-                        </li> -->
-
+                        <li>Learned semantic HTML5 markup to build clean, organized, and structural web pages.</li>
+                        <li>Studied WCAG accessibility standards to understand how to design websites for screen readers and diverse users.</li>
+                        <li>Partnered with backend developers to identify and resolve UI inconsistencies, reducing reported interface issues by 20%.</li>
                     </ul>
-
                 </div>
             </div>
         </div>
-        
 
         <div class="timeline-wrapper">
-             <!-- Vertical Line -->
-        <div class="timeline-line"></div>
-
-        <!-- Timeline Item -->
+            <div class="timeline-line"></div>
             <div class="timeline-item reverse">
                 <div class="timeline-date">
-                    <span>
-                        <i class="fa-regular fa-calendar"></i>  August 2024 - April 2025,
-                    </span>
+                    <span><i class="fa-regular fa-calendar"></i> August 2024 – April 2025</span>
                 </div>
-
                 <div class="experience-card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-briefcase"></i>
-                    </div>
-
+                    <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
                     <h2>Junior Software Developer</h2>
-
                     <h4>SoftSols Pakistan</h4>
-
                     <ul>
-
-                        <li>
-                            Crafted responsive UI components and interactive elements using Next.js and React.js, enhancing user experience with Tailwind CSS styling.
-                        </li>
-
-                        <li>
-                            Proficiently managed version control with GitHub, handling branches, resolving conflicts, and collaborating with team members to ensure
-streamlined development workflows.
-                        </li>
-
-                        <li>
-                            Developed and deployed the live website softsols.pk using WordPress, customizing themes—Astra and Elementor—to create a user-friendly and
-visually appealing design.
-                        </li>
-
-                        <!-- <li>
-                            Created automation workflows in n8n.
-                        </li>
-
-                        <li>
-                            Collaborated with AI and product teams.
-                        </li> -->
-
+                        <li>Crafted responsive UI components using Next.js and React.js, enhancing user experience with Tailwind CSS styling.</li>
+                        <li>Managed version control with GitHub — branches, conflict resolution, and team collaboration workflows.</li>
+                        <li>Developed and deployed softsols.pk using WordPress, customizing Astra and Elementor themes.</li>
                     </ul>
-
                 </div>
             </div>
         </div>
 
         <div class="timeline-wrapper">
-             <!-- Vertical Line -->
-        <div class="timeline-line"></div>
-
-        <!-- Timeline Item -->
+            <div class="timeline-line"></div>
             <div class="timeline-item">
                 <div class="timeline-date">
-                    <span>
-                        <i class="fa-regular fa-calendar"></i>  August 2025 - November 2025,
-                    </span>
+                    <span><i class="fa-regular fa-calendar"></i> August 2025 – November 2025</span>
                 </div>
-
                 <div class="experience-card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-briefcase"></i>
-                    </div>
-
+                    <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
                     <h2>Frontend Developer</h2>
-
                     <h4>Emerging Freelancer</h4>
-
                     <ul>
-
-                        <li>
-                            Optimized the Car Listing platform car-listing-frontend.vercel.app by resolving 25+ UI bugs.
-REST API integration between frontend and backend systems.
-                        </li>
-
-                        <li>
-                            Crafted responsive UI components and interactive elements using Next.js and React.js, enhancing user experience with Tailwind CSS styling.
-                        </li>
-
-                        <li>
-                            Partnered with backend developers to identify and resolve UI inconsistencies, enhancing platform stability and reducing reported interface issues
-by 20%.
-visually appealing design.
-                        </li>
-
-                        <!-- <li>
-                            Created automation workflows in n8n.
-                        </li>
-
-                        <li>
-                            Collaborated with AI and product teams.
-                        </li> -->
-
+                        <li>Optimized a car listing platform by resolving 25+ UI bugs and improving REST API integration between frontend and backend.</li>
+                        <li>Built responsive components using Next.js, React.js, and Tailwind CSS.</li>
+                        <li>Partnered with backend developers to reduce reported interface issues by 20%.</li>
                     </ul>
-
                 </div>
             </div>
-        </div> 
-         
+        </div>
     </section>
 
+    <!-- ===================== CONTACT ===================== -->
     <section class="communication" id="contact">
-                <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
-                <p class ="project">Have a project in mind or just want to say hi? I'm always open to discussing new opportunities and creative ideas.</p>
+        <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+        <p class="project">Have a project in mind or just want to say hi? I'm always open to discussing new opportunities and creative ideas.</p>
 
-                <div class="communication-section">
-                    <div class="communication-section-1">
-                        <form action="">
-<h2>Send Message</h2>
-<p>I'll get back to you within 24 hours</p>
+        <div class="communication-section">
+            <div class="communication-section-1">
+                <form action="">
+                    <h2>Send Message</h2>
+                    <p>I'll get back to you within 24 hours</p>
 
-<label for="name">
-    <span><i class="fa-regular fa-user"></i>Name</span>
-    <input type="text" id="name" placeholder="Your Name">
-</label>
+                    <label for="name">
+                        <span><i class="fa-regular fa-user"></i> Name</span>
+                        <input type="text" id="name" placeholder="Your Name">
+                    </label>
+                    <label for="email">
+                        <span><i class="fa-regular fa-envelope"></i> Email</span>
+                        <input type="email" id="email" placeholder="Your Email">
+                    </label>
+                    <label for="message">
+                        <span><i class="fa-regular fa-comment"></i> Message</span>
+                        <textarea id="message" placeholder="Your Message"></textarea>
+                    </label>
 
-<label for="email">
-    <span><i class="fa-regular fa-envelope"></i>Email</span>
-    <input type="email" id="email" placeholder="Your Email">
-</label>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
 
-<label for="message">
-    <span><i class="fa-regular fa-comment"></i>Message</span>
-    <textarea id="message" placeholder="Your Message"></textarea>
-</label>
-
-                            <button type="submit">Send Message</button>
-                        </form>
-                    </div>
-                    <div class="communication-section-2">
-
-                        <div class="contact-header">
-                            <i class="fa-solid fa-location-arrow"></i>
-                            <h2>Direct Contact</h2>
-                        </div>
-                       
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fa-regular fa-at"></i>
-                            </div>
-
-                            <div class="contact-info">
-                                <div class="contact-label">EMAIL</div>
-                                <div class="contact-value">moinuddin010203@gmail.com</div>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-
-                        <div class="contact-info">
-                            <div class="contact-label">PHONE</div>
-                            <div class="contact-value">+92 300 1234567</div>
-                        </div>
-</div>
-
-                         <div class="contact-item">
-
-                        <div class="contact-icon">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-
-                        <div class="contact-info">
-                            <div class="contact-label">Location</div>
-                            <div class="contact-value">Karachi, Pakistan</div>
-                        </div>
-
-                         </div>
+            <div class="communication-section-2">
+                <div class="contact-header">
+                    <i class="fa-solid fa-location-arrow"></i>
+                    <h2>Direct Contact</h2>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fa-regular fa-at"></i></div>
+                    <div class="contact-info">
+                        <div class="contact-label">EMAIL</div>
+                        <div class="contact-value">moinuddin010203@gmail.com</div>
                     </div>
                 </div>
-                
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="contact-info">
+                        <div class="contact-label">PHONE</div>
+                        <div class="contact-value">+92 300 1234567</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="contact-info">
+                        <div class="contact-label">LOCATION</div>
+                        <div class="contact-value">Karachi, Pakistan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- ===================== FOOTER NAV ===================== -->
     <footer class="footer-dock-container">
         <nav class="floating-nav">
             <div class="nav-logo">
                 <span class="logo-icon">🪐</span>
             </div>
-
             <div class="nav-links">
-                <div class="nav-capsule-bg"></div>
-                <a href="#work" class="nav-item active">Home</a>
+                <a href="#" class="nav-item active">Home</a>
                 <a href="#skills" class="nav-item">Skills</a>
-                <a href="#services" class="nav-item">Services</a>
                 <a href="#experience" class="nav-item">Experience</a>
                 <a href="#contact" class="nav-item">Contact</a>
             </div>
-
             <div class="nav-status-pill">
                 <span class="status-text">moin@gmail.com</span>
             </div>
